@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonkeyChat.ai - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #ff5858, #f09819, #38ef7d, #00bfff);
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin: 0 1rem;
+        }
+
+        .navbar-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffeb3b;
+        }
+
+        .hero {
+            background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 1rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .services,
+        .team,
+        .contact,
+        .testimonials {
+            padding: 3rem 1rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 2rem 0;
+            border-radius: 15px;
+        }
+
+        .service-cards,
+        .team-members,
+        .testimonial-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service-card,
+        .team-member,
+        .testimonial-card {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            margin: 1rem;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 30%;
+        }
+
+        .service-card:hover,
+        .team-member:hover,
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #007bff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s;
+        }
+
+        .contact form input:focus,
+        .contact form textarea:focus {
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .contact form button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #38ef7d;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .contact form button:hover {
+            background-color: #34d860;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .svg-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 1rem;
+        }
+
+        .service-card,
+        .team-member,
+        .testimonial-card,
+        .contact form {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+
+<body data-scroll-container>
+    <header class="navbar" data-scroll-section>
+        <div>
+            <ul class="navbar-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to DonkeyChat.ai</h1>
+            <p>Your one-stop solution for intelligent chat services.</p>
+        </section>
+
+        <section class="services" id="services">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <h3>Chatbot Development</h3>
+                    <p>We create intelligent chatbots to enhance your customer support.</p>
+                </div>
+                <div class="service-card">
+                    <h3>AI Integration</h3>
+                    <p>Integrate AI solutions into your existing systems seamlessly.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Solutions</h3>
+                    <p>We provide custom AI solutions tailored to your business needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team" id="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <h3>John Doe</h3>
+                    <p>CEO & Founder</p>
+                    <img src="path/to/image.jpg" alt="John Doe">
+                </div>
+                <div class="team-member">
+                    <h3>Jane Smith</h3>
+                    <p>CTO</p>
+                    <img src="path/to/image.jpg" alt="Jane Smith">
+                </div>
+                <div class="team-member">
+                    <h3>Emily Johnson</h3>
+                    <p>Lead Developer</p>
+                    <img src="path/to/image.jpg" alt="Emily Johnson">
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p>"DonkeyChat.ai has revolutionized our customer service experience!"</p>
+                    <h3>- Happy Client</h3>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The AI integration was seamless and has improved our efficiency."</p>
+                    <h3>- Satisfied Customer</h3>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Their custom solutions are top-notch. Highly recommend!"</p>
+                    <h3>- Business Owner</h3>
+                </div>
+            </div>
+        </section>
+
+        <div class="svg-container">
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="svg-icon">
+                <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="#FFC107" />
+            </svg>
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="svg-icon">
+                <circle cx="12" cy="12" r="10" fill="#28a745" />
+            </svg>
+            <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="svg-icon">
+                <rect width="24" height="24" fill="#007bff" />
+            </svg>
+        </div>
+
+        <section class="contact" id="contact">
+            <h2>Contact Us</h2>
+            <form action="" method="get">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <br>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <br>
+                <label for="messages">Write Your Message Here:</label>
+                <br>
+                <textarea name="messages" id="messages" cols="30" rows="10">I want to tell you that,</textarea>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer data-scroll-section>
+        <div class="container">
+            <p>&copy; 2024 DonkeyChat.ai. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from('.svg-icon', {
+                duration: 2,
+                opacity: 0,
+                y: 20,
+                stagger: 0.2,
+                ease: 'power4.out'
+            });
+
+            gsap.to('.svg-icon', {
+                duration: 2,
+                rotate: 360,
+                repeat: -1,
+                ease: 'linear'
+            });
+
+            gsap.to('.service-card', {
+                duration: 1.5,
+                opacity: 1,
+                y: 0,
+                stagger: 0.3,
+                ease: 'power4.out'
+            });
+
+            gsap.to('.team-member', {
+                duration: 1.5,
+                opacity: 1,
+                y: 0,
+                stagger: 0.3,
+                ease: 'power4.out'
+            });
+
+            gsap.to('.contact form', {
+                duration: 1.5,
+                opacity: 1,
+                y: 0,
+                ease: 'power4.out'
+            });
+
+            gsap.to('.testimonial-card', {
+                duration: 1.5,
+                opacity: 1,
+                y: 0,
+                stagger: 0.3,
+                ease: 'power4.out'
+            });
+        });
+    </script>
+</body>
+
+</html>

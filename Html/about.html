@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonkeyChat.ai - About</title>
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.3/locomotive-scroll.min.js"></script>
+    <script src="/js/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* Reset and General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #000;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .navbar-menu li {
+            margin: 0 0.5rem;
+        }
+
+        .navbar-menu a {
+            font-size: 1rem;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: #ff6f00;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #000;
+                width: 100%;
+                display: none;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-toggle {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+
+        /* Main Content */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        /* Section Containers */
+        .section-container {
+            background-color: #fff;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .section-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card Styles */
+        .card {
+            background: #e25454;
+            margin: 1rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form Styles */
+        .section-contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .section-contact form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .section-contact form input,
+        .section-contact form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .section-contact form input:focus,
+        .section-contact form textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .section-contact form button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .section-contact form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* SVG Animation Styles */
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .svg-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 1rem;
+        }
+
+        /* Utility Classes */
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .space-between {
+            justify-content: space-between;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .clear {
+            height: 40px;
+            width: 30px;
+            top: 3vw;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body data-scroll-container>
+    <header class="navbar" data-scroll-section>
+        <div class="logo">DonkeyChat.ai</div>
+        <button class="navbar-toggle" aria-label="Toggle Navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="navbar-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <!-- <li><a href="donkeychat.html">Chat</a></li> -->
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
+    <div class="clear"></div>
+    <main>
+        <section class="section-about" id="about" data-scroll-section>
+            <div class="section-container section">
+                <h2>About DonkeyChat.ai</h2>
+                <div class="flex">
+                    <div class="card">
+                        <h3>About Us</h3>
+                        <p>DonkeyChat.ai is a revolutionary platform that integrates AI solutions to provide intelligent
+                            chat services.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our History</h3>
+                        <p>Founded in 2020, DonkeyChat.ai has rapidly grown to become a leader in AI-powered chatbot
+                            development.</p>
+                    </div>
+                </div>
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="svg-icon">
+                        <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" fill="#FFC107" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-history section" id="history" data-scroll-section>
+            <div class="section-container">
+                <h2>Our History</h2>
+                <div class="flex">
+                    <div class="card">
+                        <h3>Origins</h3>
+                        <p>DonkeyChat.ai was born out of a vision to enhance human-computer interaction.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Milestones</h3>
+                        <p>We've achieved significant milestones including launching several AI-driven products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-vision section " id="vision" data-scroll-section>
+            <div class="section-container">
+                <h2>Our Vision</h2>
+                <div class="flex">
+                    <div class="card">
+                        <h3>Future Goals</h3>
+                        <p>We aim to continue innovating and providing state-of-the-art AI solutions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Commitment</h3>
+                        <p>Our commitment is to deliver high-quality, reliable, and ethical AI technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-contact" id="contact" data-scroll-section>
+            <div class="section-container">
+                <h2>Contact Us</h2>
+                <form action="/submit-contact" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DonkeyChat.ai. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggle = document.querySelector('.navbar-toggle');
+            const navbarMenu = document.querySelector('.navbar-menu');
+
+            navbarToggle.addEventListener('click', function () {
+                navbarMenu.classList.toggle('active');
+            });
+
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true
+            });
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+                scrollTop(value) {
+                    return arguments.length
+                        ? scroll.scrollTo(value, 0, 0)
+                        : scroll.scroll.instance.scroll.y;
+                },
+                getBoundingClientRect() {
+                    return {
+                        top: 0,
+                        left: 0,
+                        width: window.innerWidth,
+                        height: window.innerHeight
+                    };
+                },
+                pinType: document.querySelector("[data-scroll-container]").style.transform
+                    ? "transform"
+                    : "fixed"
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => scroll.update());
+            ScrollTrigger.refresh();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+ /* General Reset */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ /* Body and General Styling */
+ body {
+     font-family: Arial, sans-serif;
+     background-color: #ecf0f1;
+     /* Light gray background */
+     color: #3498db;
+     /* Blue text color */
+     line-height: 1.6;
+ }
+
+ a {
+     color: #3498db;
+     /* Blue link color */
+     text-decoration: none;
+     transition: color 0.3s ease;
+ }
+
+ a:hover {
+     color: #e74c3c;
+     /* Red link color on hover */
+ }
+
+ /* Header and Navigation */
+ header {
+     background-color: #2ecc71;
+     /* Green header background */
+     padding: 10px 0;
+ }
+
+ nav ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ nav ul li {
+     display: inline;
+     margin-right: 10px;
+     position: relative;
+     left: 2%;
+ }
+
+ nav ul li:nth-child(2),
+ nav ul li:nth-child(3),
+ nav ul li:nth-child(4),
+ nav ul li:nth-child(5) {
+     left: 40%;
+
+ }
+
+ nav ul li:nth-child(6) {
+     left: 62%;
+ }
+
+ nav ul li:nth-child(7) {
+     left: 60%;
+ }
+
+ nav ul li:nth-child(8) {
+     left: 58%;
+ }
+
+ nav ul li a {
+     color: #ecf0f1;
+     /* Light gray text for links */
+     text-decoration: none;
+     padding: 10px 15px;
+     display: inline-block;
+ }
+
+ nav ul li a:hover {
+     background-color: #3498db;
+     /* Blue background on hover */
+     color: #fff;
+     /* White text on hover */
+ }
+
+
+
+ /* Sidebar */
+ .sidebar {
+     position: fixed;
+     top: 9vh;
+     left: -250px;
+     /* Initially hidden */
+     width: 250px;
+     background-color: #2ecc71;
+     /* Green sidebar background */
+     overflow-y: auto;
+     /* Enable scrolling if sidebar content exceeds height */
+     transition: left 0.3s ease;
+     z-index: 1000;
+     padding-top: 60px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     /* Subtle shadow */
+ }
+
+ .sidebar ul {
+     list-style-type: none;
+     padding: 0;
+ }
+
+ .sidebar ul li {
+     margin-bottom: 10px;
+     border-bottom: 1px solid #3498db;
+     /* Border between sidebar items */
+ }
+
+ .sidebar ul li:last-child {
+     margin-bottom: 0;
+     /* Remove margin for the last item */
+     border-bottom: none;
+     /* Remove border for the last item */
+ }
+
+ .sidebar ul li a {
+     display: block;
+     padding: 15px;
+     color: #3498db;
+     /* Blue text color for sidebar links */
+     text-decoration: none;
+     transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .sidebar ul li a:hover {
+     background-color: #3498db;
+     /* Blue background on hover */
+     color: #fff;
+     /* White text on hover */
+ }
+
+ /* Close sidebar button */
+ #menu-icon {
+     /* display: block; */
+     color: #3498db;
+     /* Blue color for the icon */
+     font-size: 24px;
+     /* margin: 20px; */
+     cursor: pointer;
+     transition: color 0.3s ease;
+ }
+
+ #menu-icon:hover {
+     color: #fff;
+     /* White color on hover */
+ }
+
+ /* Adjustments for Sidebar Animation */
+ .sidebar.open {
+     left: 0;
+     /* Show sidebar */
+ }
+
+ body.no-scroll {
+     overflow: hidden;
+     /* Disable scrolling when sidebar is open */
+ }
+
+ /* Font Awesome Icons */
+ .sidebar ul li a i {
+     margin-right: 10px;
+     /* Space between icon and text */
+ }
+
+ /* Animations */
+ .sidebar ul li a i {
+     transition: transform 0.3s ease;
+     /* Example of icon animation */
+ }
+
+ .sidebar ul li a:hover i {
+     transform: rotate(180deg);
+     /* Rotate icon on hover */
+ }
+
+ /* Main Content Sections */
+ .hero,
+ .features,
+ .form-section {
+     padding: 40px 20px;
+     text-align: center;
+     background-color: #fff;
+     /* White background for main sections */
+     margin-bottom: 20px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     /* Subtle shadow */
+ }
+
+ .hero h1,
+ .features h2,
+ .form-section h2 {
+     color: #3498db;
+     /* Blue heading color */
+     margin-bottom: 20px;
+ }
+
+ .features .feature {
+     margin-bottom: 30px;
+ }
+
+ .features .feature h2 {
+     color: #e74c3c;
+     /* Red heading color */
+ }
+
+ .form-section form {
+     background-color: #ecf0f1;
+     /* Light gray background for forms */
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .form-section form label {
+     display: block;
+     margin-bottom: 10px;
+     color: #3498db;
+     /* Blue label text color */
+ }
+
+ .form-section form input[type="text"],
+ .form-section form input[type="email"],
+ .form-section form textarea {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #ecf0f1;
+     resize: none;
+     /* Light gray border */
+ }
+
+ .form-section form button[type="submit"] {
+     background-color: #2ecc71;
+     /* Green button background */
+     color: #fff;
+     /* White text color */
+     border: none;
+     padding: 10px 20px;
+     cursor: pointer;
+     border-radius: 5px;
+     text-transform: uppercase;
+ }
+
+ .form-section form button[type="submit"]:hover {
+     background-color: #27ae60;
+     /* Darker green on hover */
+ }
+
+ /* Footer */
+ footer {
+     background-color: #070808;
+     /* Dark footer background */
+     color: #ecf0f1;
+     /* Light gray footer text color */
+     text-align: center;
+     padding: 10px 0;
+     /* position: fixed; */
+     bottom: 0;
+     width: 100%;
+ }
+
+ /* Dark Mode */
+ .dark-mode {
+     background-color: #34495e;
+     /* Dark background */
+     color: #ecf0f1;
+     /* Light gray text color */
+ }
+
+ .dark-mode a {
+     color: #3498db;
+     /* Blue link color in dark mode */
+ }
+
+ .dark-mode a:hover {
+     color: #e74c3c;
+     /* Red link color on hover in dark mode */
+ }
+
+ .dark-mode .hero,
+ .dark-mode .features,
+ .dark-mode .form-section {
+     background-color: #2c3e50;
+     /* Darker background for main sections in dark mode */
+     box-shadow: none;
+     /* Remove shadow in dark mode */
+ }
+
+ .dark-mode .hero h1,
+ .dark-mode .features h2,
+ .dark-mode .form-section h2 {
+     color: #3498db;
+     /* Blue heading color in dark mode */
+ }
+
+ .dark-mode .features .feature h2 {
+     color: #e74c3c;
+     /* Red heading color in dark mode */
+ }
+
+ .dark-mode .form-section form {
+     background-color: #34495e;
+     /* Dark background for forms in dark mode */
+     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+     /* Subtle shadow */
+ }
+
+ .dark-mode .form-section form label {
+     color: #3498db;
+     /* Blue label text color in dark mode */
+ }
+
+ .dark-mode .form-section form button[type="submit"] {
+     background-color: #2ecc71;
+     /* Green button background in dark mode */
+ }
+
+ .dark-mode .form-section form button[type="submit"]:hover {
+     background-color: #27ae60;
+ }
+
+ .hero {
+     position: relative;
+     overflow: hidden;
+ }
+
+ .slider {
+     display: flex;
+     transition: transform 0.5s ease;
+ }
+
+ .slide {
+     flex: 0 0 100%;
+     /* Ensure each slide takes full width */
+     overflow: hidden;
+     /* Hide overflow to prevent image spill */
+ }
+
+ .slide img {
+     width: 100%;
+     /* Ensure image fills the slide container */
+     height: 500px;
+     /* Maintain aspect ratio */
+     background-size: cover;
+ }
+
+ /* Animation classes */
+ .slide.inactive {
+     opacity: 0;
+     /* Hide inactive slides */
+ }
+
+ .slide.left {
+     transform: translateX(-100%);
+ }
