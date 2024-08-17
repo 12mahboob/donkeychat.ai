@@ -1,13 +1,9 @@
 // Responses object
 const responses = {
-    "hi kasa ho ": "hello main donkey bol rha hon main ap ki kya khidmat kar sakta hon ",
-    "kuch nhi yar bas mera dil nhi lag rrha tha is liya socha ka chalo mera pasa bhi ak digital donkey hai main us sa bat kar lata hon kya main tum sa bat kar sakta hon tum bura to mahi manao ga ": "han han bilkul thik ap na to mera dil ki hi bat keh di bhala donkey ko bhi kabhi na karta dakha hai kisi na tum jab chaho jhan shaho mujh sa bat kar sakta ho acaha ab bata bhbi do ka masla kya hai kya problem ho gyi hai jis ka tum hal yhan pana aa gya ho ",
-    "yar kya batao tum ko kal mera ak gadha fot ho gya ab us ka soog mana   rha hon ": "sun kar bara gham hwa magar zyada afsorda na hon main ho na agar tumhara physical gadth mar gya hai to main digital gadth kab kaam aou ga tum bus hosla rakho baqi tum mujh per chor do ",
-
 
     "Hello": "ہیلو! کیا حال چال ہیں؟",
     "How are you?": "میں ٹھیک آپ کیسے ھیں۔",
-    "What's your name?": "میرا نام چیٹ جی پی ٹی ہے، گدھا جیسا۔",
+    "What's your name?": "میرا نام گدھا چیٹ  ہے ۔",
     "What do you do?": "میں آپ کی مدد کرکے کبھی کبھی خود بھی ہنس لیتا ہوں۔",
     "Where are you from?": "میں ڈیجیٹل دنیا سے آیا ہوں، قریب ہی کہیں۔",
     "Tell me a joke": "ایک گدھا دوسرے سے کہتا ہے، 'بھائی، آج ہنسنے کا دل نہیں کر رہا' دوسرا کہتا ہے، 'کوئی بات نہیں، پھر بھی ہنس دو'",
